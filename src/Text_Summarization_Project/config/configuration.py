@@ -1,6 +1,7 @@
 from Text_Summarization_Project.constants import *
 from Text_Summarization_Project.utils.common import read_yaml, create_directories
 from Text_Summarization_Project.entity import DataIngestionConfig
+from Text_Summarization_Project.entity import DataValidationConfig
 from Text_Summarization_Project.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
 
 class ConfigurationManager:
@@ -24,6 +25,21 @@ class ConfigurationManager:
         )
         
         return data_ingestion_config
+    
+    
+    def get_data_validation_config(self) ->DataValidationConfig: # type: ignore
+        config =self.config.data_validation
+        
+        create_directories([config.root_dir])
+        
+        data_validation_config =DataValidationConfig(
+            root_dir=config.root_dir,
+            STATUS_FILE=config.STATUS_FILE,
+            ALL_REQUIRED_FILES=config.ALL_REQUIRED_FILES
+            
+        )
+        
+        return data_validation_config
         
     
 
