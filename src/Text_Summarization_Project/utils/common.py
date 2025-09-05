@@ -2,7 +2,7 @@ import os
 from box.exceptions import BoxValueError
 import yaml
 from Text_Summarization_Project.logging import logger
-from ensure import ensure_annotations
+from typeguard import typechecked as ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any

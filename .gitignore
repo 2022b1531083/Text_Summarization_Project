@@ -8,6 +8,8 @@ texts/
 .venv/
 env/
 venv/
+texts
+.texts/
 
 
 
